@@ -2,11 +2,12 @@
 Offensive C++ is a collection of offensive security snippets written in C++. It includes various tools for penetration testing and exploit development.
 
 # Table of Contents
-* Introduction
-* Why C/C++?
-* Compiling
-* Contributing
-* License
+* [OffensiveCpp](#offensivecpp)
+* [Introduction](#introduction)
+* [Why C/C++?](#why-cc)
+* [Compiling](#compiling)
+* [Contributing](#contributing)
+* [License](#license)
 
 # Introduction
 The purpose of this project is to provide colleciton of snippets that can be used for penetration testing and exploit development. Currently, the project contains snippets for:
