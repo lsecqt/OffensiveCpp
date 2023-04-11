@@ -1,2 +1,2 @@
 # OffensiveCpp
-This repo contains C/C++ snippets that can be handy in specific offensive scenarios.
+This repo contains collection of C/C++ snippets that can be handy in specific offensive scenarios.
