@@ -6,6 +6,7 @@ Offensive C++ is a collection of offensive security snippets written in C++. It 
 * [Introduction](#introduction)
 * [Why C/C++?](#why-cc)
 * [Compiling](#compiling)
+* [Reference libraries](#reference-libraries)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -34,6 +35,13 @@ This repo does not come with precompiled binaries. Before compiling, make sure y
 2. An Integrated Development Environment (IDE), in my case "Visual Studio 2017".
 
 3. The Windows SDK: The Windows SDK includes headers, libraries, and tools that are necessary for developing Windows applications in C++.
+
+# Reference Libraries
+Here you can find a list of external open source project I have included.
+* [Shellcode Execution](https://github.com/aahmad097/AlternativeShellcodeExec)
+* [Sandbox Evasion](https://github.com/Arvanaghi/CheckPlease/tree/master/C)
+* [Unhooking NTDLL.dll](https://www.ired.team/offensive-security/defense-evasion/how-to-unhook-a-dll-using-c++)
+* [Direct Syscalls](https://github.com/JohnWoodman/stealthInjector)
 
 # Contributing
 Contributions to Offensive C++ are welcome. To contribute, please fork the repository and submit a pull request. Please make sure that your code is well-documented and tested.
