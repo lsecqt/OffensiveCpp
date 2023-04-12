@@ -6,14 +6,17 @@ Offensive C++ is a collection of offensive security snippets written in C++. It 
 * [Introduction](#introduction)
 * [Why C/C++?](#why-cc)
 * [Compiling](#compiling)
-* [Reference libraries](#reference-libraries)
+* [Reference Libraries](#reference-libraries)
 * [Contributing](#contributing)
 * [License](#license)
 
 # Introduction
 The purpose of this project is to provide colleciton of snippets that can be used for penetration testing and exploit development. Currently, the project contains snippets for:
-* Shellcode Execution
+* AV/EDR Evasion
+* Enumeration
 * Sandbox Evasion
+* Shellcode Execution
+* WinAPI Examples
 
 # Why C/C++?
 * C/C++ is a compiled language, which means that it can produce code that is optimized for the specific target platform.
