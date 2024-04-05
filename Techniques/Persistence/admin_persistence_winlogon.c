@@ -3,6 +3,7 @@
 
 // This POC executes powershell.exe on system logon
 // It requires administrative privileges
+// https://youtu.be/VqDY2Tfz6Qw?t=20
 
 int main() {
     HKEY hKey;

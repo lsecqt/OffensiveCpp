@@ -3,6 +3,8 @@
 
 // This POC executes powershell.exe when the specific user logs in again
 // It does not require administrative privileges
+// https://youtu.be/VqDY2Tfz6Qw?t=225
+
 
 int main() {
     HKEY hKey;
