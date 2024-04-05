@@ -46,6 +46,10 @@ Here you can find a list of external open source project I have included.
 * [Unhooking NTDLL.dll](https://www.ired.team/offensive-security/defense-evasion/how-to-unhook-a-dll-using-c++)
 * [Direct Syscalls](https://github.com/JohnWoodman/stealthInjector)
 
+# Support
+You can support my work by becomming my [Patreon](https://www.patreon.com/Lsecqt).
+By doing so, you get access to my private packer, while keeping me motivated to produce more and better content.
+
 # Contributing
 Contributions to Offensive C++ are welcome. To contribute, please fork the repository and submit a pull request. Please make sure that your code is well-documented and tested.
 
